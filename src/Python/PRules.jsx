@@ -1,0 +1,31 @@
+import { Link } from "react-router-dom";
+export default function PRules(){
+    return(
+    <>
+    <div className="min-h-screen flex justify-center items-center px-5">
+    <div className="bg-gray-500 w-full sm:w-[90%] md:w-[800px] h-auto md:h-[500px]  rounded-lg text-white mx-auto p-10 my-[10%]
+     flex flex-col items-center">
+ <div >
+  <h1 className="text-xl sm:text-2xl font-bold mb-4">
+    Important Instructions Before You Start the Quiz
+  </h1>
+  <ol className="list-decimal list-inside space-y-2 text-sm sm:text-base md:text-lg md:my-8">
+    <li>Each question has a time limit of 1 minute. Make sure to read and answer correctly.</li>
+    <li>Covers Python fundamentals, data structures, functions, OOP, exception handling, file handling, and comprehensions</li>
+    <li>Timer starts as soon as the question appears. No extra time will be given once it runs out.</li>
+    <li>You cannot change your answer once submitted. Think carefully before confirming.</li>
+    <li>Each correct answer gives you +1 mark. Aim for the highest score!</li>
+    <li>No negative marking for wrong answers. So it's worth taking a guess.</li>
+  </ol>
+ </div>
+  <div className="my-5 py-5">
+    <Link to={'/PQuestions'}>
+  <button className="text-black text-xl font-bold w-auto h-auto bg-green-500 hover:bg-green-600 px-2 rounded-lg">Start Quiz</button>
+  </Link>
+  </div>
+</div>
+</div>
+
+    </>
+    );
+}
