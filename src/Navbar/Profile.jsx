@@ -1,6 +1,7 @@
 import { useQuestions } from "../QuestionP/QuestionProvider";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import API_BASE_URL from "../url"
 
 export default function Profile() {
   const { user, refreshProfile, setUser} = useQuestions();
@@ -9,7 +10,7 @@ export default function Profile() {
 
   useEffect(() => {
     if (!user) return;
-    fetch(`http://localhost:8080/question/userProfile/${user}`)
+    fetch(`${API_BASE_URL}/question/userProfile/${user}`)
       .then((res) => {
         if (!res.ok) throw new Error("user not found");
         return res.json();
@@ -25,7 +26,7 @@ export default function Profile() {
     navigate('/')
 
   }
-  if (userData === null) return <p>Loading...</p>;
+  if (userData === null) return <div className="min-h-screen flex justify-center items-center"><p className="text-xl text-gray-700">Loading...</p>;</div>
   if (userData.length === 0) {
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">

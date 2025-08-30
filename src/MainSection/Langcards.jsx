@@ -47,7 +47,7 @@ export default function LangCards(){
         src="./src/images/javaScript-quiz.png"
         alt="js"
         className="w-full h-full  transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:-translate-y-2"
-        onClick={()=>handleSelectCategory("JavaScirpt")}
+        onClick={()=>handleSelectCategory("JavaScript")}
       />
     </div>
     <div className="text-sm md:text-lg font-medium text-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-lg font-medium">

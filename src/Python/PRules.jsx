@@ -1,5 +1,28 @@
 import { Link } from "react-router-dom";
+import { useQuestions } from "../QuestionP/QuestionProvider";
+import { useState } from "react";
+import API_BASE_URL from "../url";
 export default function PRules(){
+
+  const { setQuestions,category } = useQuestions();
+  const [loading, setLoading] = useState(false); 
+
+  const getQuestions = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch(`${API_BASE_URL}/question/category/${category}`);
+      if (!res.ok) {
+        alert(`Error Message: ${res.status}`);
+      }
+      const questions = await res.json();
+      setQuestions(questions);
+    } catch (error) {
+      console.error("Error getting questions: ", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
     return(
     <>
     <div className="min-h-screen flex justify-center items-center px-5">
@@ -18,11 +41,21 @@ export default function PRules(){
     <li>No negative marking for wrong answers. So it's worth taking a guess.</li>
   </ol>
  </div>
-  <div className="my-5 py-5">
-    <Link to={'/PQuestions'}>
-  <button className="text-black text-xl font-bold w-auto h-auto bg-green-500 hover:bg-green-600 px-2 rounded-lg">Start Quiz</button>
-  </Link>
-  </div>
+       <div className="my-5 py-5">
+            <Link to={"/JSQuestions"}>
+              <button
+                className={`text-black text-xl font-bold w-auto h-auto px-4 py-2 rounded-lg ${
+                  loading
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-green-500 hover:bg-green-600"
+                }`}
+                onClick={getQuestions}
+                disabled={loading}
+              >
+                {loading ? "Loading questions..." : "Start Quiz"}
+              </button>
+            </Link>
+          </div>
 </div>
 </div>
 
