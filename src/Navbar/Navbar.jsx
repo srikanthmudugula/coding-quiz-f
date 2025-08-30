@@ -11,8 +11,8 @@ export default function Navbar({ setShowAbout, scrolltoFooter }) {
           
           <div className="flex items-center gap-4 md:ml-4">
             <img
-              src="./src/images/Image.png"
-              alt="image"
+              src="/images/Image.png" 
+              alt="Logo"
               className="h-12 w-12 md:h-15 md:w-15"
             />
             <h1 className="text-sm sm:text-xl md:text-3xl text-gray font-bold">

@@ -14,7 +14,7 @@ export default function LangCards(){
   <div className="md:w-[250px] sm:w-[200px] rounded-lg bg-white group">
     <div className="w-full md:h-[250px] sm:h-[200px] overflow-visible relative">
       <img
-        src="./src/images/java-quiz.png"
+        src="images/java-quiz.png"
         alt="java"
         className="w-full h-full  transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:-translate-y-2 "
         onClick={()=>handleSelectCategory("java")}
@@ -29,7 +29,7 @@ export default function LangCards(){
   <div className="md:w-[250px] sm:w-[200px] rounded-lg bg-white group">
     <div className="w-full md:h-[250px] sm:h-[200px] overflow-visible relative">
       <img
-        src="./src/images/python-quiz.png"
+        src="/images/python-quiz.png"
         alt="python"
         className="w-full h-full  transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:-translate-y-2"
         onClick={()=>handleSelectCategory("python")}
@@ -44,7 +44,7 @@ export default function LangCards(){
   <div className="md:w-[250px] sm:w-[200px] rounded-lg bg-white group ">
     <div className="w-full md:h-[250px] sm:h-[200px] overflow-visible relative">
       <img
-        src="./src/images/javaScript-quiz.png"
+        src="/images/JavaScript-quiz.png"
         alt="js"
         className="w-full h-full  transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:-translate-y-2"
         onClick={()=>handleSelectCategory("JavaScript")}
